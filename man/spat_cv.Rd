@@ -41,10 +41,10 @@ y-coordinate columns in \code{data}. Ignored for \code{sf} data and for
 \item{\code{"block"}}{Spatial block CV: the domain is cut into blocks that
 are assigned to folds (\code{\link[spatialsample:spatial_block_cv]{spatialsample::spatial_block_cv()}}).}
 \item{\code{"buffered"}}{Random k-fold CV with an exclusion buffer around
-each test fold (\code{\link[spatialsample:spatial_vfold]{spatialsample::spatial_buffer_vfold_cv()}}); see
+each test fold (\code{\link[spatialsample:spatial_buffer_vfold_cv]{spatialsample::spatial_buffer_vfold_cv()}}); see
 \code{buffer}.}
 \item{\code{"loo"}}{Leave-location-out CV: groups given by \code{loo_group} are
-held out together (\code{\link[spatialsample:spatial_vfold]{spatialsample::spatial_leave_location_out_cv()}}).}
+held out together (\code{\link[spatialsample:spatial_leave_location_out_cv]{spatialsample::spatial_leave_location_out_cv()}}).}
 \item{\code{"random"}}{Ordinary (non-spatial) random k-fold CV, folds drawn
 by \code{mboost::cv(type = "kfold")}. Needs no coordinates.}
 }}
@@ -74,7 +74,7 @@ where test folds can overlap. For the spatial types, the underlying
 }
 \description{
 Builds a fold matrix for \code{\link[=spat_cvrisk]{spat_cvrisk()}}: spatial folds via
-\pkg{spatialsample}, or ordinary random k-fold CV via \code{\link[mboost:cvrisk]{mboost::cv()}}.
+\pkg{spatialsample}, or ordinary random k-fold CV via \code{\link[mboost:cv]{mboost::cv()}}.
 }
 \examples{
 set.seed(1)

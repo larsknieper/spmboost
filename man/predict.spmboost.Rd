@@ -33,7 +33,7 @@ coordinates needed), \code{"only"} returns the kriged spatial effect alone
 \code{"class"} (binomial only).}
 
 \item{which}{Optional subset of base-learners (names or indices). Then,
-as in \code{\link[mboost:methods]{mboost::predict.mboost()}}, the contributions of these
+as in \code{\link[mboost:predict.mboost]{mboost::predict.mboost()}}, the contributions of these
 base-learners are returned, without intercept and spatial effect.}
 
 \item{aggregate}{\code{"sum"} (default): prediction at \code{mstop}; \code{"cumsum"}:
@@ -46,7 +46,7 @@ locations instead of all of them -- an approximation that keeps
 prediction cheap for very large data. Used automatically (with
 \code{k = 100}) when the model was fitted with local fitting (N > 3000).}
 
-\item{...}{Further arguments passed to \code{\link[mboost:methods]{mboost::predict.mboost()}}.}
+\item{...}{Further arguments passed to \code{\link[mboost:predict.mboost]{mboost::predict.mboost()}}.}
 }
 \value{
 A numeric vector (or a matrix for \code{aggregate = "cumsum"} and

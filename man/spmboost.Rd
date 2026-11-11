@@ -26,7 +26,7 @@ spmboost(
 }
 \arguments{
 \item{boost_formula}{Formula for the boosted (non-spatial) part, as in
-\code{\link[mboost:gamboost]{mboost::mboost()}}.}
+\code{\link[mboost:mboost]{mboost::mboost()}}.}
 
 \item{data}{A \code{data.frame} with coordinate columns, or an \code{sf} object with
 POINT geometries (other geometries are replaced by their centroids). An
@@ -72,7 +72,7 @@ when \code{spcov_initial} is given, and that \code{spcov_initial} and \code{loca
 affect the initial fit -- from the first boosting iteration on, both are
 managed internally (warm starts, and local fitting for large N).}
 
-\item{na.action, weights, offset, control, oobweights, baselearner, ...}{Arguments passed to \code{\link[mboost:gamboost]{mboost::mboost()}}. If \code{offset} is \code{NULL}, the link
+\item{na.action, weights, offset, control, oobweights, baselearner, ...}{Arguments passed to \code{\link[mboost:mboost]{mboost::mboost()}}. If \code{offset} is \code{NULL}, the link
 of the mean response is used.}
 
 \item{family}{Response distribution. Currently only \code{gaussian()} with
@@ -89,7 +89,7 @@ mboost methods, see \code{\link[=predict.spmboost]{predict.spmboost()}} for pred
 kriged spatial effect and \code{\link[=extract_spatial]{extract_spatial()}} for the spatial fit.
 }
 \description{
-Fits a componentwise gradient boosting model (via \code{\link[mboost:gamboost]{mboost::mboost()}}) in
+Fits a componentwise gradient boosting model (via \code{\link[mboost:mboost]{mboost::mboost()}}) in
 which a Gaussian-process spatial effect is re-estimated in every boosting
 iteration by \code{\link[spmodel:splm]{spmodel::splm()}}.
 }

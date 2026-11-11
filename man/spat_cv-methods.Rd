@@ -14,7 +14,7 @@
 \item{object, x}{An object of class \code{"spat_cv"} from \code{\link[=spat_cvrisk]{spat_cvrisk()}}.}
 
 \item{...}{Not used (\code{mstop()}), or further graphical parameters passed
-to \code{\link[graphics:plot.default]{graphics::plot()}}.}
+to \code{\link[graphics:plot]{graphics::plot()}}.}
 
 \item{main}{Plot title.}
 }

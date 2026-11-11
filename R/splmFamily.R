@@ -25,6 +25,9 @@ build_local_index_pool <- function(data, xcoord, ycoord, k, pool_size = 20) {
 ## computed. If it is below t_s, no spatial effect is included. The spatial model
 ## is still fitted every iteration, so if the share stays below 
 ## t_s throughout, the result is a fixed-effects-only model.
+
+#' @exportS3Method
+#' @noRd
 as.Family.splm <- function(object,
                            xcoord = NULL,
                            ycoord = NULL,
