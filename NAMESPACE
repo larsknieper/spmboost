@@ -1,0 +1,25 @@
+import(mboost)
+
+importFrom(spmodel, splm)
+importFrom(sf, st_as_sf, st_drop_geometry, st_coordinates, st_crs, st_transform,
+           st_geometry_type, st_centroid, st_is_longlat)
+importFrom(spatialsample, autoplot,
+           spatial_clustering_cv, spatial_block_cv,
+           spatial_buffer_vfold_cv, spatial_leave_location_out_cv)
+importFrom(parallel, mclapply)
+importFrom(graphics, abline, lines)
+importFrom(stats, as.formula, coef, dist, fitted, gaussian,
+           model.frame, model.response, na.omit, predict, update)
+importFrom(utils, modifyList)
+
+S3method(as.Family, splm)
+S3method(predict, spmboost)
+S3method(fitted, spmboost)
+S3method(mstop, spat_cv)
+S3method(plot, spat_cv)
+S3method(autoplot, spat_cv_boost)
+
+export(spmboost)
+export(extract_spatial)
+export(spat_cv)
+export(spat_cvrisk)

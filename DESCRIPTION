@@ -1,0 +1,21 @@
+Package: spmboost
+Type: Package
+Title: Model-Based Boosting with Gaussian Process Spatial Effects
+Version: 0.2.0
+Authors@R: 
+    person("Lars", "Knieper", email = "lars.knieper@uni-goettingen.de",
+           role = c("aut", "cre"))
+Description: Componentwise gradient boosting for point-referenced spatial
+    data, extending 'mboost'. In every boosting iteration, a Gaussian process
+    spatial effect is re-estimated by (restricted) maximum likelihood with
+    'spmodel', and the base-learners are fitted to the residual after
+    removing it. Predictions at new locations are obtained by kriging. A
+    threshold on the spatial share of the residual variance allows the
+    spatial effect to be dropped when it is negligible. Includes spatial and
+    random cross-validation for choosing the number of boosting iterations.
+Depends: R (>= 3.5.0), mboost
+Imports: spmodel, sf, spatialsample, parallel, stats, utils, graphics
+License: GPL-2
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
