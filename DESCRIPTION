@@ -13,6 +13,8 @@ Description: Componentwise gradient boosting for point-referenced spatial
     threshold on the spatial share of the residual variance allows the
     spatial effect to be dropped when it is negligible. Includes spatial and
     random cross-validation for choosing the number of boosting iterations.
+URL: https://github.com/larsknieper/spmboost
+BugReports: https://github.com/larsknieper/spmboost/issues
 Depends: R (>= 3.5.0), mboost
 Imports: spmodel, sf, spatialsample, parallel, stats, utils, graphics
 License: GPL-2

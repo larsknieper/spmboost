@@ -383,14 +383,23 @@ spat_cv <- function(data,
     data_sf <- data
   }
   
-  folds_obj <- switch(
+  # crs = NA (the default) is deliberate: Euclidean distances on the given
+  # coordinates. spatialsample warns about the missing CRS -- muffle exactly
+  # that warning in this case; everything else passes through.
+  no_crs <- !inherits(data, "sf") && is.na(crs)
+  folds_obj <- withCallingHandlers(switch(
     cv_type,
     spatial  = spatial_clustering_cv(data_sf, v = k),
     block    = spatial_block_cv(data_sf, v = k),
     buffered = spatial_buffer_vfold_cv(data_sf, v = k, radius = radius,
                                        buffer = buffer, ...),
     loo      = spatial_leave_location_out_cv(data_sf, v = k, group = loo_group, ...)
-  )
+  ),
+  warning = function(w) {
+    if (no_crs && grepl("coordinate reference system", conditionMessage(w), fixed = TRUE)) {
+      invokeRestart("muffleWarning")
+    }
+  })
   
   # folds_M: N x k, 1 = training, 0 = test, -1 = excluded (buffer only)
   N <- nrow(data)
